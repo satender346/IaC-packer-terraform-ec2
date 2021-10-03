@@ -12,3 +12,7 @@ chmod +x ./aws-iam-authenticator
 mkdir -p $HOME/bin && cp ./aws-iam-authenticator $HOME/bin/aws-iam-authenticator && export PATH=$PATH:$HOME/bin
 echo 'export PATH=$PATH:$HOME/bin' >> ~/.bashrc
 
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install packer
+
